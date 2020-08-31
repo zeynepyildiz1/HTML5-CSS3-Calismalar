@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<style>
+    body{
+        font-family: "Roboto", sans-serif;
+font-size: 25px;
+    }
+   .sidebar{
+       background-color: #222;
+       height: 100vh;
+       left:0;
+       top:0;
+       width:0;
+       padding-top:60px ;
+       transition: 0.5s;
+       overflow-x: hidden;
+       z-index: 999;
+    position: fixed;
+
+   }
+   .sidebar a{
+       text-decoration: none;
+       transition: 0.3s;
+       padding:25px 8px 8px 35px;
+       display:block;
+       color:#eee;
+   }
+   .sidebar a:hover{
+       color: white;
+   } 
+   .sidebar .closeBtn{
+       position:absolute;
+       top:0px;
+       right:10px;
+       font-size: 30px;
+      
+   }
+   .open{
+       cursor:pointer;
+   }
+</style>
+</head>
+<body>
+<div id="sidebar" class="sidebar">
+    <a href="javascript:void(0)" onclick="closeSidebar()" class="closeBtn">&times;</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Team</a>
+    <a href="#">Contact</a>
+</div>   
+<span class="open" onclick="openSidebar()"> &#9776; Open</span>
+<main id="main">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure hic quidem provident. Ipsam voluptates libero voluptatibus deserunt repudiandae distinctio saepe? Assumenda possimus nihil iure facilis, qui mollitia. Odit, praesentium dicta?</p>
+</main>
+<script>
+    function openSidebar(){
+    document.getElementById("sidebar").style.width=250;
+    document.getElementById("main").style.marginLeft=250;
+    document.body.style.backgroundColor="rgba(0,0,0,0.3)"
+    }
+    function closeSidebar(){
+    document.getElementById("sidebar").style.width=0;
+    document.getElementById("main").style.marginLeft=0;
+    document.body.style.backgroundColor="#fff"
+    }
+</script>
+</body>
+</html>

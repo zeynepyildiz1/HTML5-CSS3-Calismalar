@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<style>
+body{margin:0;font-family: Arial, Helvetica, sans-serif;}
+  .topnav{background-color: #333;overflow: hidden;}
+  .topnav a{display: block;float: left;color: #f1f1f1;padding:14px 18px;text-decoration: none;font-size: 20px;}
+  .topnav a.active{background-color: #17a2b8;}
+  .topnav a:hover:not(.active){background-color: #000;}
+  .topnav .icon{
+      position :relative;
+     float: right;
+     display: none;
+  }
+  
+  @media screen and (max-width:768px){
+      .topnav .icon{
+     display: block;
+  }
+      .topnav a{
+          display: none;
+      } 
+      .topnav.responsive a{
+          float:none;
+          display :block;
+      }
+    .topnav.responsive a.icon{
+          position: absolute;
+          right:0;
+          top:0;
+      }
+  }
+</style>
+</head>
+<body>
+<div class="topnav" id="topnav">
+    <a href="#"  class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Team</a>
+    <a href="#">Contact</a>
+    <a href="#" class="icon" onclick="responsive()">&#9776;</a>
+</div>
+<script>
+    function responsive(){
+        var x=document.getElementById("topnav");
+        if(x.className==="topnav"){x.className+=" responsive";}
+        else{x.className="topnav";}
+    }
+</script>
+</body>
+</html>
